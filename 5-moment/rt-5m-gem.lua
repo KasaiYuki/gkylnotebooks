@@ -12,7 +12,8 @@ local Moments = require "Moments"
 local gasGamma = 5./3.  -- gas gamma
 local elcCharge = -1.0  -- electron charge
 local ionCharge = 1.0   -- ion charge
-local elcMass = 1.0     -- electron mass 
+local ionMass = 1.0     -- ion mass
+local elcMass = ionMass/25.0     -- electron mass 
 local lightSpeed = 1.0  -- light speed
 local mu0 = 1.0         -- mu_0
 
@@ -28,7 +29,7 @@ local perturbationLevel = 0.1  -- relative perturbation magnitude
 
 -- Derived parameters for problem setup or for diagnostic information
 local epsilon0 = 1.0 / lightSpeed^2 / mu0          -- epsilon_0
-local ionMass = elcMass * massRatio                -- ion mass
+
 local vAe0 = lightSpeed * vAe0_lightSpeed          -- electron Alfven speed
 local vAlf0 = vAe0 * math.sqrt(elcMass / ionMass)  -- plasma Alfven speed
 local B0 = vAlf0 * math.sqrt(n0 * ionMass)         -- background B field
@@ -47,7 +48,7 @@ local psi0 = perturbationLevel * B0                -- potential of perturbation 
 local Lx, Ly = 25.6 * di0, 12.8 * di0  -- domain lengths
 local Nx, Ny = 64, 32                  -- grid size
 local tEnd = 25.0 / OmegaCi0           -- end of simulation
-local nFrame = 5                       -- number of output frames at t=tEnd
+local nFrame = 50                      -- number of output frames at t=tEnd
 
 
 --------------------------------------------------------------------------------
