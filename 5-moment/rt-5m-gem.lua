@@ -46,9 +46,9 @@ local psi0 = perturbationLevel * B0                -- potential of perturbation 
 
 -- Domain and time control
 local Lx, Ly = 25.6 * di0, 12.8 * di0  -- domain lengths
-local Nx, Ny = 64, 32                  -- grid size
-local tEnd = 25.0 / OmegaCi0           -- end of simulation
-local nFrame = 50                      -- number of output frames at t=tEnd
+local Nx, Ny = 128, 64                  -- grid size
+local tEnd = 50.0 / OmegaCi0           -- end of simulation
+local nFrame = 100                      -- number of output frames at t=tEnd
 
 
 --------------------------------------------------------------------------------
